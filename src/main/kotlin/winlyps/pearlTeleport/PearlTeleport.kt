@@ -38,6 +38,7 @@ class PearlTeleport : JavaPlugin(), Listener {
     private fun isWithinWorldBorder(location: Location, worldBorder: WorldBorder): Boolean {
         val borderCenter = worldBorder.center
         val borderSize = worldBorder.size / 2
+        val buffer = 1.0 // One block buffer
 
         val x = location.x
         val z = location.z
@@ -45,6 +46,7 @@ class PearlTeleport : JavaPlugin(), Listener {
         val centerX = borderCenter.x
         val centerZ = borderCenter.z
 
-        return x >= centerX - borderSize && x <= centerX + borderSize && z >= centerZ - borderSize && z <= centerZ + borderSize
+        return x >= centerX - borderSize + buffer && x <= centerX + borderSize - buffer &&
+                z >= centerZ - borderSize + buffer && z <= centerZ + borderSize - buffer
     }
 }
