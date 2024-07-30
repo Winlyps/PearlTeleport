@@ -1,0 +1,4 @@
+name: PearlTeleport
+version: '1.0-SNAPSHOT'
+main: winlyps.pearlTeleport.PearlTeleport
+api-version: '1.20'
